@@ -8,8 +8,8 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 
--- Show invisible characters: spaces, tabs, end-of-line, etc.
-opt.list = true
+-- Invisible characters (listchars): off by default, toggle per window with <leader>l
+opt.list = false
 opt.listchars = {
 	tab = "▸ ",
 	space = "·",
