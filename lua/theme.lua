@@ -19,9 +19,17 @@ local function clear_background()
 end
 
 local function setup()
+  vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
+
+  require("tokyonight").setup({
+    style = "night",
+    transparent = true,
+    styles = { sidebars = "transparent", floats = "transparent" },
+  })
+
   -- Re-apply whenever a colorscheme is set, so themes can't paint it back
   vim.api.nvim_create_autocmd("ColorScheme", { callback = clear_background })
-  clear_background()
+  vim.cmd.colorscheme("tokyonight")
 end
 
 return {
