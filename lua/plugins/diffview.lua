@@ -28,7 +28,13 @@ function M.setup()
     },
   })
 
-  vim.keymap.set("n", "<leader>gd", "<Cmd>DiffviewOpen<CR>", { desc = "Review Git changes" })
+  vim.keymap.set("n", "<leader>gd", function()
+    if require("diffview.lib").get_current_view() then
+      vim.cmd.DiffviewClose()
+    else
+      vim.cmd.DiffviewOpen()
+    end
+  end, { desc = "Toggle Git review" })
 end
 
 return M
