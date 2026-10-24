@@ -12,7 +12,6 @@ function M.setup()
     sources = { default = { "lsp", "path", "buffer" } },
     completion = {
       documentation = { auto_show = true },
-      trigger_show = true,
     },
   })
 end
