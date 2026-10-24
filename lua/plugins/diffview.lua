@@ -6,6 +6,7 @@ function M.setup()
 
   require("diffview").setup({
     use_icons = false,
+    enhanced_diff_hl = true,
     hooks = {
       diff_buf_win_enter = function(_, winid)
         -- Show the whole file, including unchanged context, in each diff pane.
