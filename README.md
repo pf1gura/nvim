@@ -28,13 +28,47 @@ rustup component add rust-analyzer rustfmt rust-src --toolchain stable
 - A **Nerd Font** in your terminal is optional, but recommended for completion icons.
 - Project-local tools in `node_modules/.bin`, `.venv/bin`, and `venv/bin` are also supported.
 
+## Keybindings
+
+The leader key is **Space**. All bindings below use normal mode unless noted; uppercase keys are case-sensitive. Plugin defaults are not listed.
+
+### Files and editor
+
+| Keys | Action |
+| --- | --- |
+| `<Space>1` | Open the netrw file explorer |
+| `<Space>p` | Find files (tracked and untracked files in Git repos; includes hidden files outside Git) |
+| `<Space>e` | List open buffers |
+| `<Space>F` | Search project contents |
+| `<Space>l` | Toggle invisible characters in the current window |
+| `<Space>L` | Format the current buffer (with LSP fallback) |
+| `Ctrl-j` / `Ctrl-k` | Next / previous selection in Telescope (insert mode) |
+
+### Git
+
+| Keys | Action |
+| --- | --- |
+| `<Space>gs` | Show Git status in Telescope |
+| `<Space>gd` | Toggle repository-wide diff review (Diffview) |
+| `<Space>hp` | Preview the current hunk (when Gitsigns attaches) |
+
+### Language servers and diagnostics
+
+These bindings require an attached language server.
+
+| Keys | Action |
+| --- | --- |
+| `gd` | Go to definition |
+| `gr` | List references in Telescope |
+| `K` | Show hover documentation |
+| `<Space>o` | List symbols in the current document (outline) |
+| `<Space>rn` | Rename symbol |
+| `<Space>ca` | Show code actions |
+| `[d` / `]d` | Jump to the previous / next diagnostic |
+| `gl` | Show the diagnostic message in a floating window |
+
 ## Usage and checks
 
-The leader key is **Space**.
-
-- `<Space>p`: find files
-- `<Space>F`: search project contents
-- `<Space>L`: format the current buffer
 - `:ConformInfo`: inspect available formatters
 - `:checkhealth`: check dependencies
 - `:UpdateAll`: update plugins and Tree-sitter parsers
